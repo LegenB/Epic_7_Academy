@@ -89,8 +89,10 @@ export const useFetchHeros = () => {
     
     // FILTRO POR NOMBRE
     const onGetNameFilter = (name) =>{
-      console.log(name)
-
+      const filteredHeros = originalHeros.filter(hero => {
+        return (hero.name.toLowerCase().includes(name.toLowerCase()))
+      });
+      setAllHeros(filteredHeros);
     }
     return{
         allHeros,

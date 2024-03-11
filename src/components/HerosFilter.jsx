@@ -99,13 +99,12 @@ export const HerosFilter = ({onElementFilter ,onRarityFilter,onClassFilter, onFi
                 break;
         }
     };
-
+    // Filtro por nombre
     const handleKeyDown = (event) => {
         if (event.key === 'Enter') {
-          console.log('Buscar:', searchTerm);
           onFilterName(searchTerm);
         }
-      };
+    };
 
 
 
@@ -115,8 +114,8 @@ export const HerosFilter = ({onElementFilter ,onRarityFilter,onClassFilter, onFi
         <div className=' mt-5  mx-6'>  
 
             <div className='flex w-full space-x-5 mt-1'>
-                <input type="text" className=' text-white rounded-xl border border-teal-500 px-2 py-1 bg-slate-700 w-3/6' 
-                    placeholder="Search..." 
+                <input type="text" className=' text-white rounded-xl border border-teal-500 px-2 md:px-4 py-1 bg-slate-700 w-3/6' 
+                    placeholder="Search... " 
                     value={searchTerm}
                     onChange={(event) => setSearchTerm(event.target.value)}
                     onKeyDown={handleKeyDown}
