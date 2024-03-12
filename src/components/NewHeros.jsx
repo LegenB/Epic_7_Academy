@@ -29,7 +29,7 @@ const NewHeros = () => {
                             </p>   
                         </div>
                         <div className=" ml-2  sm:ml-5 text-center row-span-1 col-span-1 xl:col-span-2  2xl:col-span-2  self-center ">  
-                            <h1 className=' text-sm'>Elemento signo y otra wea xd o puede ser boton?</h1>
+                            <h1 className=' text-sm'>Posible boton  </h1>
                         </div>
                     </div>
                 </div>  

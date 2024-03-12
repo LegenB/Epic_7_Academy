@@ -9,6 +9,7 @@ module.exports = {
     extend: {
       backgroundImage:{
         'space': `url('${join(__dirname, 'src/images/Backgrounds/EpicSpace.jpg')}')`,
+        'tabern': `url('${join(__dirname, 'src/images/Backgrounds/loby.jpg')}')`
       }
     },
   },
