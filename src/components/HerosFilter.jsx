@@ -101,9 +101,10 @@ export const HerosFilter = ({onElementFilter ,onRarityFilter,onClassFilter, onFi
     };
     // Filtro por nombre
     const handleKeyDown = (event) => {
-        if (event.key === 'Enter') {
-          onFilterName(searchTerm);
-        }
+       /* if (event.key === 'Enter') {
+         
+        }*/
+        onFilterName(searchTerm);
     };
 
 
