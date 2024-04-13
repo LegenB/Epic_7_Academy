@@ -8,7 +8,7 @@ export const useFetchHeros = () => {
     const [elementFilter, setElementFilter] = useState('ALL');
     const [rarityFilter, setRarityFilter] = useState(0);
     const [classFilter, setClassFilter] = useState('ALL');
-
+    
     useEffect(() => {
       getHeros()
         .then(newHeros => {
@@ -17,14 +17,15 @@ export const useFetchHeros = () => {
         });
     }, []);
 
+   
     //Use Effect para actualizar las variables de los filtros
     useEffect(() => {
       onGetFilters(rarityFilter, classFilter, elementFilter)
     }, [elementFilter,rarityFilter,classFilter])
 
     //Filtro por elementos
-    const onGetElementFilter = (type) => {
-      setElementFilter(type);
+    const onGetElementFilter = (element) => {
+      setElementFilter(element);
     }
     //Filtro por Rareza
     const onGetRarityFilter = (Rarity ) =>{
@@ -38,41 +39,41 @@ export const useFetchHeros = () => {
     }
     
     // FILTRO TRIPLE 
-    const onGetFilters = (rarity, clas, type) => {
-      //console.log(' Rareza: ' +rarity + ' Clase: '+ clas +' Tipo: ' + type)
-      if (rarity !== 0 && clas !== 'ALL' && type !== 'ALL') { // RAREZA + CLASE + TIPO
+    const onGetFilters = (rarity, clas, element) => {
+      //console.log(' Rareza: ' +rarity + ' Clase: '+ clas +' Tipo: ' + element)
+      if (rarity !== 0 && clas !== 'ALL' && element !== 'ALL') { // RAREZA + CLASE + TIPO
           const filteredHeros = originalHeros.filter(hero => {
-              return hero.rarity === rarity && hero.clas === clas && hero.type === type;
+              return hero.rarity === rarity && hero.class === clas && hero.element === element;
           });
           setAllHeros(filteredHeros);
       } 
       else if (rarity !== 0 && clas !== 'ALL' ){  // RAREZA + CLASE
           const filteredHeros = originalHeros.filter(hero => {
-              return hero.rarity === rarity && hero.clas === clas;
+              return hero.rarity === rarity && hero.class === clas;
           });
           setAllHeros(filteredHeros);
       } 
-      else if (rarity !== 0 && type !== 'ALL') { // RAREZA + TIPO
+      else if (rarity !== 0 && element !== 'ALL') { // RAREZA + TIPO
           const filteredHeros = originalHeros.filter(hero => {
-              return hero.rarity === rarity && hero.type === type;
+              return hero.rarity === rarity && hero.element === element;
           });
           setAllHeros(filteredHeros);
       } 
-      else if (type !== 'ALL' && clas !== 'ALL') { // TIPO + CLASE
+      else if (element !== 'ALL' && clas !== 'ALL') { // TIPO + CLASE
           const filteredHeros = originalHeros.filter(hero => {
-              return hero.type === type && hero.clas === clas;
+              return hero.element === element && hero.class === clas;
           });
           setAllHeros(filteredHeros);
       } 
-      else if (type !== 'ALL') { //TIPO
+      else if (element !== 'ALL') { //TIPO
           const filteredHeros = originalHeros.filter(hero => {
-              return hero.type === type;
+              return hero.element === element;
           });
           setAllHeros(filteredHeros);
       } 
       else if (clas !== 'ALL') { // CLASE
         const filteredHeros = originalHeros.filter(hero => {
-            return hero.clas === clas;
+            return hero.class === clas;
         });
         setAllHeros(filteredHeros);
       } 

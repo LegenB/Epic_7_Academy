@@ -33,10 +33,10 @@ function importAll(r) {
 
 const images = importAll(require.context('../images/iconModel', false, /\.png$/));
 
-export const HeroItem = ({nombre, elemento, clase, rareza}) => {
- 
+export const HeroItem = ({nombre, elemento, clase, rareza,icon}) => {
+    /*
     const imageName = `${nombre.replace(/\s/g, '-')}-icon.png`;
-    const heroImage = images[imageName];
+    const heroImage = images[imageName];*/
     
     let color;
     let ShadowColor;
@@ -130,11 +130,11 @@ export const HeroItem = ({nombre, elemento, clase, rareza}) => {
 
                     <div className='size-20 absolute -left-6 w-24 h-24 rounded-full shadow-lg group-hover:scale-105 transition z-20 '>
 
-                        <img src={heroImage}    alt="avatar"  className='absolute w-24 h-24 z-10 rounded-full ' />
+                        <img src={icon}   loading="lazy" alt="avatar"  className='absolute w-24 h-24 z-10 rounded-full ' />
 
                         <div className={`absolute rounded-full ${color} top-0 right-0 bottom-0 left-0 z-0  drop-shadow-lg `}></div>
-                        <img src={Hclase}   alt=""        className='absolute size-7 -left-1 top-0 z-20 drop-shadow-md  transition'/> 
-                        <img src={iconoElemento} alt="avatar"  className='absolute size-8 -right-2 -top-1 z-20 drop-shadow-md ' />         
+                        <img src={Hclase}   alt=""    loading="lazy"    className='absolute size-7 -left-1 top-0 z-20 drop-shadow-md  transition'/> 
+                        <img src={iconoElemento} alt="avatar" loading="lazy" className='absolute size-8 -right-2 -top-1 z-20 drop-shadow-md ' />         
                     </div>
 
                     <div className="flex flex-col py-5 pl-20 z-10 ">

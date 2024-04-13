@@ -4,6 +4,7 @@ import { EpicApp, Heros, Home,Hero, Credits } from "../Pages";
 
 
 export const getRoutes = () => createBrowserRouter([
+    
     {
         path: "/",
         element: <EpicApp />,

@@ -9,12 +9,12 @@ import { useFetchHeros } from "../hooks/useFetchHeros";
 
 export const Heros = () => {
 
+  console.log("Funcion Hero")
   const { allHeros, onGetRarityFilter, onGetClassFilter, onGetElementFilter,onGetNameFilter} = useFetchHeros(); 
   
-  const onElementFilter =(type = '') =>{
-    onGetElementFilter(type);
+  const onElementFilter =(element = '') =>{
+    onGetElementFilter(element);
   }
-
 
   const onClassFilter = (Class = '') =>{
     onGetClassFilter(Class);
