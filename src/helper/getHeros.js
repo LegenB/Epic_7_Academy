@@ -9,7 +9,7 @@ export const getHeros =  async() => {
     const resp  = await fetch( url );
     
     const data  = await resp.json();
-
+    
     // const gifs = data.map( img => ({
     //   id: img.id,
     //   title: img.title,

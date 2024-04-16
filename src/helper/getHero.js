@@ -11,7 +11,7 @@ export const getHero = async ( name ) => {
         }
         const data = await resp.json(); // Espera a que se resuelva la promesa de json()
          
-            // Aquí puedes trabajar con los datos de la respuesta
+        //console.log(data[0])
         
         return data[0]; // Devuelve los datos
     
