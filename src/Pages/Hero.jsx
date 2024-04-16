@@ -110,6 +110,7 @@ export const Hero = () => {
     }
     setEl(elem.default)
   }
+  
   const heroHoroscope = async (horoscope) =>{
     let horos
     switch (horoscope) {
