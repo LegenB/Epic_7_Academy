@@ -31,7 +31,7 @@ export const Header = () => {
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink to="/Artifact" className={({isActive}) => `block py-2 pr-4 pl-3 rounded bg-primary-700 bg-transparent text-white-700 hover:text-cyan-300  ${isActive ? 'text-cyan-300' : ''}`}
+                            <NavLink to="/Artifacts" className={({isActive}) => `block py-2 pr-4 pl-3 rounded bg-primary-700 bg-transparent text-white-700 hover:text-cyan-300  ${isActive ? 'text-cyan-300' : ''}`}
                                 >Artifact
                             
                             </NavLink>

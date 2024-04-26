@@ -17,7 +17,7 @@ export const getRoutes = () => createBrowserRouter([
             { path: "Heros/:heroname", element: <Hero /> },
             { path: "Credits", element: <Credits /> },
             { path: "Artifacts", element: <Artifacts/> },
-            { path: "Artifact", element: <Artifact/> },
+            { path: "Artifacts/:name", element: <Artifact/> },
            
         ]
     }
