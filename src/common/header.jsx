@@ -1,6 +1,6 @@
 import React from 'react'
 import Logo from '../images/Logo_E7A.png'
-
+import { NavLink} from 'react-router-dom';
 export const Header = () => {
 
 
@@ -21,16 +21,26 @@ export const Header = () => {
                     <ul className="flex font-medium flex-row text-sm sm:text-lg
                         md:space-x-5 lg:space-x-8 xl:space-x-8 2xl:space-x-8 mt-0 ">
                         <li>
-                            <a href="/" className="block py-2 pr-4 pl-3 rounded bg-primary-700 bg-transparent ltext-primary-700" aria-current="page">Home</a>
+                            <NavLink to="/" className={({isActive}) => `block py-2 pr-4 pl-3 rounded bg-primary-700 bg-transparent text-white-700  hover:text-cyan-300 ${isActive ? 'text-cyan-300' : ''}`} aria-current="page"
+                                >Home
+                            </NavLink>
                         </li>
                         <li>
-                            <a href="/Heros" className="block py-2 pr-4 pl-3 text-white-700 border-gray-700">Heros</a>
+                            <NavLink to="/Heros" className={({isActive}) => `block py-2 pr-4 pl-3 rounded bg-primary-700 bg-transparent text-white-700 hover:text-cyan-300  ${isActive ? 'text-cyan-300' : ''}`}
+                                >Heros
+                            </NavLink>
                         </li>
                         <li>
-                            <a href="#" className="block py-2 pr-4 pl-3 text-white-700 border-gray-700">Artifact</a>
+                            <NavLink to="/Artifact" className={({isActive}) => `block py-2 pr-4 pl-3 rounded bg-primary-700 bg-transparent text-white-700 hover:text-cyan-300  ${isActive ? 'text-cyan-300' : ''}`}
+                                >Artifact
+                            
+                            </NavLink>
                         </li>
                         <li>
-                            <a href="/Credits" className="block py-2 pr-4 pl-3 text-white-700 border-gray-700">Credits</a>
+                            <NavLink to="/Credits" className={({isActive}) => `block py-2 pr-4 pl-3 rounded bg-primary-700 bg-transparent text-white-700 hover:text-cyan-300  ${isActive ? 'text-cyan-300' : ''}`}
+                                >Credits
+                            
+                            </NavLink>
                         </li>
                     </ul>
                 </div>
