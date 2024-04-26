@@ -160,8 +160,10 @@ export const Hero = () => {
       <>
       <div className='relative bg-space lg:bg-tabern bg-no-repeat bg-cover h-full bg-fixed'>
         <div className='h-full w-auto mt-8 sm:mt-10 md:mt-16  lg:flex lg:justify-center lg:mx-4 '>
-            <div className='flex items-center mx-auto w-[250px] h-[400px] sm:w-[400px] sm:h-[600px] lg:mx-0 lg:w-[500px]  lg:h-[800px] animate-fade animate-duration-1000  lg:animate-fade-right lg:animate-duration-[1500ms]'>
-              <img src={hero.model} alt="" className='bg-auto bg-no-repeat bg-center  '/>
+            <div className='flex items-center  mx-auto w-[250px] h-[400px] sm:w-[400px] sm:h-[600px] lg:mx-0 lg:w-[500px]  lg:h-[800px] animate-fade animate-duration-1000  lg:animate-fade-right lg:animate-duration-[1500ms]'>
+              <div className='p-7'>
+                <img id='ModelImage' src={hero.model} alt="" className=' bg-auto bg-no-repeat bg-center  '/>
+              </div>   
             </div>
             
             <div className='relative sm:mx-10 w-auto h-96 flex justify-center lg:w-[500px] lg:h-[800px] lg:mx-0 animate-fade animate-duration-1000  lg:animate-fade-down lg:animate-duration-[1500ms]'>

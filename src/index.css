@@ -13,6 +13,12 @@ html,body{
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
       monospace;
   }
+  #ModelImage{
+    mask-image: linear-gradient(
+      black 80%,
+      transparent
+    );
+  }
   
 
 
