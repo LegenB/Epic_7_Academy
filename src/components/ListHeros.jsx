@@ -1,5 +1,3 @@
-
-
 import { HeroItem } from "../components/HeroItem";
 
 

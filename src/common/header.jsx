@@ -27,7 +27,7 @@ export const Header = () => {
                             <a href="/Heros" className="block py-2 pr-4 pl-3 text-white-700 border-gray-700">Heros</a>
                         </li>
                         <li>
-                            <a href="#" className="block py-2 pr-4 pl-3 text-white-700 border-gray-700">Artifact</a>
+                            <a href="/Artifacts" className="block py-2 pr-4 pl-3 text-white-700 border-gray-700">Artifact</a>
                         </li>
                         <li>
                             <a href="/Credits" className="block py-2 pr-4 pl-3 text-white-700 border-gray-700">Credits</a>

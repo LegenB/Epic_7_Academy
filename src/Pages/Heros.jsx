@@ -34,7 +34,7 @@ export const Heros = () => {
 
     <div className=' relative bg-space bg-no-repeat bg-cover h-full bg-fixed'>
       
-      <HerosWelcome/>
+      <HerosWelcome title="Heroes"/>
     
       <HerosFilter  onElementFilter={onElementFilter} onRarityFilter={onRarityFilter} onClassFilter={onClassFilter} onFilterName={onNameFilter}/>
       
