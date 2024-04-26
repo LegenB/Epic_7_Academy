@@ -18,7 +18,9 @@ export const getHero = async ( name ) => {
     } 
     
     catch (error) {
+
         console.error('Error al procesar la solicitud:', error);
+   
         throw error; // Lanza el error para que lo maneje el código que llama a getGifs
     }
 }
