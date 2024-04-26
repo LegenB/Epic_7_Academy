@@ -26,18 +26,19 @@ export const Footer = () => {
 
                     <div className='  flex  justify-center items-center'>
                         <div >
-
+                          
                             <div className=''> 
-                                <a href="https://epic7.onstove.com/en/brand/?stayHome=y" target='blank' className='hover:text-cyan-300'>Oficial Page</a> 
+                                <a href="https://epic7.onstove.com/en/brand/?stayHome=y" target='blank' className='hover:text-cyan-300'>Epic 7 Seven oficial page</a> 
                             </div>
-                            <div className='pt-2'> 
-                                <a href="#" target='blank' className='hover:text-cyan-300'>Otro</a> 
-                            </div>
+
 
                         </div>  
                     </div>
 
                 </div>
+            </div>
+            <div className='flex justify-center items-center py-4 bg-gray-950/80'>
+                © Byron Huerta, 2024 
             </div>
            
         </footer>

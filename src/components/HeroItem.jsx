@@ -5,7 +5,7 @@ import Star_3 from '../images/Star/3-star.png'
 import Star_4 from '../images/Star/4-star.png'
 import Star_5 from '../images/Star/5-star.png'
 
-//import importarIcono from '../images/iconModel'
+
 
 // iconos de Clases
 import Mage from "../images/Clases/Mage.png";
@@ -24,14 +24,6 @@ import Dark from '../images/Elemento/Dark.png';
 
 
 
-function importAll(r) {
-    let images = {};
-    r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
-    return images;
-}
-
-
-const images = importAll(require.context('../images/iconModel', false, /\.png$/));
 
 export const HeroItem = ({nombre, elemento, clase, rareza,icon}) => {
     /*
