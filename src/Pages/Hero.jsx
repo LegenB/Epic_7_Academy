@@ -13,15 +13,12 @@ import EfRes from '../images/StatsIcon/Efres.png'
 import Dual from '../images/StatsIcon/Dual.png'
 
 
-
-
-
-
-
 export const Hero = () => {
-
+  
   const { heroname } = useParams();
+  const [ready, setReady] = useState(false);
   const [hero, setHero] = useState([]);
+  const [skills, setSkills] = useState([]);
   const [im, setIm] = useState(null); // Class
   const [rt, setRt] = useState(null); // Rarity
   const [el, setEl] = useState(null); // Element
@@ -30,12 +27,15 @@ export const Hero = () => {
   useEffect(() => {
       getHero(heroname)
         .then(newHero => {
-          setHero(newHero);
-          heroClass(newHero.class) 
-          heroRarity(newHero.rarity)
-          heroElement(newHero.element)
-          heroHoroscope(newHero.horoscope)
-               
+          const nwHero = newHero[0][0]
+          const nwSkills = newHero[1]        
+          setHero(nwHero);
+          setSkills(nwSkills);
+          heroClass(nwHero.class) 
+          heroRarity(nwHero.rarity)
+          heroElement(nwHero.element)
+          heroHoroscope(nwHero.horoscope)
+          setReady(true)         
         });
     }, []);
 
@@ -157,7 +157,7 @@ export const Hero = () => {
   
   
   return (
-      <>
+    <>
       <div className='relative bg-space lg:bg-tabern bg-no-repeat bg-cover h-full bg-fixed'>
         <div className='h-full w-auto mt-8 sm:mt-10 md:mt-16  lg:flex lg:justify-center lg:mx-4 '>
             <div className='flex items-center  mx-auto w-[250px] h-[400px] sm:w-[400px] sm:h-[600px] lg:mx-0 lg:w-[500px]  lg:h-[800px] animate-fade animate-duration-1000  lg:animate-fade-right lg:animate-duration-[1500ms]'>
@@ -266,10 +266,78 @@ export const Hero = () => {
           
 
             </div>
-        </div>
-     
-        
+        </div>     
       </div>
+      { ready && (
+        <div className='bg-slate-700' >
+          <div className='flex justify-center'>
+            <div className=' max-w-[1200px] w-[1200px]'>
+              <div className='my-3 text-center text-2xl'>
+                <h1> Hero Skills</h1>
+              </div>
+
+              <div className='bg-slate-800 p-3 rounded-md border border-slate-900 mb-2'>
+                <div className='flex justify-between'>
+                  <h2 className='text-xl mb-1'> <span className='text-yellow-200'>S1</span> {skills[0].skill_title}</h2>
+                  {skills[0].skill_cooldown ==="None" ?  (<h3></h3>) : 
+                    skills[0].skill_cooldown ==="Passive" ? (<h3 className='text-emerald-400'>{skills[0].skill_cooldown}</h3>) : 
+                    <h3 className='text-stone-300'>{skills[0].skill_cooldown} of Cooldown</h3>}
+                </div>
+
+                <div>
+                  <p className='text-base pl-1'>{skills[0].skill_description}</p>
+                  {skills[0].skill_soulburn === null ? (<p></p>) : 
+                    (<div className='mt-2'>
+                      <h3 className='text-xl text-sky-300 mb-1'>Sould Burn</h3>
+                      <p className='pl-1'>{skills[0].skill_soulburn}</p>
+                    </div>)
+                  }
+                </div>
+                    
+              </div>
+
+
+              <div className='bg-slate-800 p-3 rounded-md border border-slate-900 mb-2'>
+                <div className='flex justify-between'>
+                  <h2 className='text-xl mb-1'> <span className='text-yellow-200'>S2</span> {skills[1].skill_title}</h2>
+                  {skills[1].skill_cooldown ==="None" ?  (<h3></h3>) : 
+                    skills[1].skill_cooldown ==="Passive" ? (<h3 className='text-emerald-400'>{skills[1].skill_cooldown}</h3>) : 
+                    <h3 className='text-stone-300'>{skills[1].skill_cooldown} of Cooldown</h3>}
+                </div>
+                <div>
+                  <p className='text-base pl-1'>{skills[1].skill_description}</p>
+                  {skills[1].skill_soulburn === null ? (<p></p>) : 
+                    (<div className='mt-2'>
+                      <h3 className='text-xl text-sky-300 mb-1'>Sould Burn</h3>
+                      <p className='pl-1'>{skills[1].skill_soulburn}</p>
+                    </div>)
+                  }
+                </div>
+              </div>
+
+              <div className='bg-slate-800 p-3 rounded-md border border-slate-900 mb-2'>
+                <div className='flex justify-between'>
+                  <h2 className='text-xl mb-1'> <span className='text-yellow-200'>S3</span> {skills[2].skill_title}</h2>
+                  {skills[2].skill_cooldown ==="None" ?  (<h3></h3>) : 
+                    skills[2].skill_cooldown ==="Passive" ? (<h3 className='text-emerald-400'>{skills[2].skill_cooldown}</h3>) : 
+                    <h3 className='text-stone-300'>{skills[2].skill_cooldown} of Cooldown</h3>}
+                </div>
+                <div>
+                  <p className='text-base pl-1'>{skills[2].skill_description}</p>
+                  {skills[2].skill_soulburn === null ? (<p></p>) : 
+                    (<div className='mt-2'>
+                      <h3 className='text-xl text-sky-300 mb-1'>Sould Burn</h3>
+                      <p className='pl-1'>{skills[2].skill_soulburn}</p>
+                    </div>)
+                  }
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )
+      }
+      
       
       
     
@@ -278,7 +346,7 @@ export const Hero = () => {
 
 
           
-      </>
+    </>
       
   )
 }

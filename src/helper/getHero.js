@@ -11,9 +11,11 @@ export const getHero = async ( name ) => {
         }
         const data = await resp.json(); // Espera a que se resuelva la promesa de json()
          
-        //console.log(data[0])
-        
-        return data[0]; // Devuelve los datos
+        //console.log(data)
+        //const hero_data = data[0]; // Acceder al primer elemento del primer arreglo
+        const hero_skills = data[1]; // Acceder al segundo elemento
+        console.log(hero_skills)
+        return data ; // Devuelve los datos
     
     } 
     
